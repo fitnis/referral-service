@@ -11,8 +11,7 @@ func main() {
 
 	r := router.Group("/referrals")
 	{
-		r.POST("", handlers.CreateReferral)
-		r.POST("/specialist", handlers.ReferToSpecialist)
+		handlers.RegisterReferralRoutes(r)
 	}
 
 	router.Run(":8087")
